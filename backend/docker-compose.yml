@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  solution_develop:
+    build: ./
+    container_name: "backend"
+    image: "golang:1.21-alpine"
+    volumes:
+      - ./:/go/src/solution_develop/
+    ports:
+      - "8080:8080"
+    tty: true
+    stdin_open: true

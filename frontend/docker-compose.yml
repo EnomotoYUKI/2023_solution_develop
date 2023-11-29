@@ -1,0 +1,11 @@
+version: '3'
+services:
+  view:
+    build: ./view
+    container_name: "fronend"
+    volumes:
+      - ./view:/app
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
