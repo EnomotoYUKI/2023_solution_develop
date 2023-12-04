@@ -29,6 +29,7 @@ services:
   my_sql:
     build: ./db
     platform: linux/amd64
+    container_name: "mysql"
     image: mysql:8.0.29
     ports:
       - "3306:3306"

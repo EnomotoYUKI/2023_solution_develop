@@ -1,6 +1,14 @@
 # 2023_solution_develop
 23年度 IPUT ソリューション開発 IoT‐Video班
 
+## 環境構築
+### 初回起動
+```bash
+docker compose build
+
+
+```
+
 ### backend
 Go言語
 ```
@@ -12,8 +20,7 @@ cd src/solution_develop/ #作業ディレクトリへ移動(書かなくても�
 ### frontend
 Next.js + TypeScript
 ```
-doceker compose up -d
-docker compose exec view sh
+docker compose exec frontend sh
 npm install #初回のみ
 npm run dev
 ```
