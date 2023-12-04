@@ -14,6 +14,7 @@ Next.js + TypeScript
 ```
 doceker compose up -d
 docker compose exec view sh
+npm install #初回のみ
 npm run dev
 ```
  
