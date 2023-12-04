@@ -12,6 +12,8 @@ services:
       - "3000:3000"
     stdin_open: true
     tty: true
+    networks:
+      - default
   # バックエンド
   backend:
     build: 
@@ -19,12 +21,15 @@ services:
       dockerfile: ./build/Dockerfile
     container_name: "backend"
     image: "golang:1.21-alpine"
+    working_dir: /go/src/solution_develop/
     volumes:
       - ./backend:/go/src/solution_develop/
     ports:
       - "8080:8080"
     tty: true
     stdin_open: true
+    networks:
+      - default
   # DB
   my_sql:
     build: ./db
@@ -38,3 +43,9 @@ services:
       TZ: Asia/Tokyo #time-zone 指定.日本時間(東京)に設定 
     volumes:
       - ./db/data:/var/lib/mysql
+    networks:
+      - default
+networks:
+  default:
+    name: solution_develop
+    driver: bridge
